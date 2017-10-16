@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<title>Brewer</title>
+		
+		<link rel="shortcut icon" href="favicon.png" type="image/png" />
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/materialize.min.css}"/>
+		
+		<link rel="shortcut icon" th:href="@{/images/favicon.png}"/>
+	</head>
+	
+	<body>
+		
+		<div>
+
+			<div th:replace="admin/layout/fragments/navbar :: layout-navbar"></div>
+			
+			<!-- ================= CONTEÚDO - INÍCIO ================= -->
+			
+			<div class="container">
+				<div class="row">
+					<div class="col m3 s12">
+						<div th:replace="admin/layout/fragments/sidebar :: layout-sidebar"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col m9 s12" layout:fragment="conteudo">
+			
+			</div>
+			
+			<!-- ================= CONTEÚDO - FIM ================= -->
+	
+			<div th:replace="admin/layout/fragments/footer :: layout-footer"></div>
+	
+		</div>
+	
+		<script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+		<script th:src="@{/js/materialize.min.js}"></script>
+		<script th:src="@{/javascripts/vendors/jquery.maskMoney.min.js}"></script>
+		
+		<script type="text/javascript">
+			$( document ).ready(function(){
+				$(".button-collapse").sideNav();
+			});
+		</script>
+		
+		<th:block layout:fragment="javascript-extra"></th:block>
+		
+	</body>
+
+</html>
